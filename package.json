@@ -1,6 +1,6 @@
 {
     "name": "SpecialMaps",
-    "version": "321.0.1",
+    "version": "322.0.1",
     "main": "src/specMaps.js",
     "license": "MIT",
     "author": "jbs4bmx",
