@@ -1,8 +1,8 @@
 /*
  *      Name: Special Maps
- *   Version: 322.0.1
+ *   Version: 325.0.1
  * Copyright: jbs4bmx
- *    Update: 20.08.2022
+ *    Update: 23.10.2022
 */
 
 import { DependencyContainer } from "tsyringe";
@@ -15,16 +15,10 @@ class SpecMaps implements IMod
 {
     private pkg;
 
-    public preAkiLoad(container: DependencyContainer)
-    {
-        const logger = container.resolve<ILogger>("WinstonLogger");
-        this.pkg = require("../package.json")
-        logger.info(`Loading: ${this.pkg.author}-${this.pkg.name} v${this.pkg.version}`);
-    }
-
     public postDBLoad(container: DependencyContainer): void {
 		const logger = container.resolve<ILogger>("WinstonLogger");
 		const db = container.resolve<DatabaseServer>("DatabaseServer").getTables();
+        this.pkg = require("../package.json");
 
         // Customs Plan (Map).......tpl = 5798a2832459774b53341029
         // Factory Plan (Map).......tpl = 574eb85c245977648157eec3
@@ -64,7 +58,6 @@ class SpecMaps implements IMod
         logger.info(`${this.pkg.author}-${this.pkg.name} v${this.pkg.version}: Cached Successfully`);
     }
 
-    public postAkiLoad(container: DependencyContainer) {return;}
 }
 
 module.exports = { mod: new SpecMaps() }

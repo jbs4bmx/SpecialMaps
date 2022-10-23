@@ -1,10 +1,10 @@
 {
     "name": "SpecialMaps",
-    "version": "322.0.1",
+    "version": "325.0.1",
     "main": "src/specMaps.js",
     "license": "MIT",
     "author": "jbs4bmx",
-    "akiVersion": "3.2.1",
+    "akiVersion": ">=3.2.5",
     "scripts": {
         "setup:environment": "npm i",
         "build:unzipped": "copyfiles -e \"./node_modules/**/*.*\" -e \"./dist/**/*.*\" -e \"./package-lock.json\" -e \"./tsconfig.json\" -e \"./README.txt\" -e \"./mod.code-workspace\" \"./**/*.*\" ./dist",
